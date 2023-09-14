@@ -1,6 +1,6 @@
 export default function HeaderPure() {
     return (
-      <footer>header pure</footer>
+      <header>header pure</header>
     )
   }
   

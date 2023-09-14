@@ -1,6 +1,6 @@
 export default function HeaderHome() {
     return (
-      <footer>header for home</footer>
+      <header>header for home</header>
     )
   }
   

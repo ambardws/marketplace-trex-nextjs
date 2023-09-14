@@ -1,5 +1,17 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Parastar PWA
 
+a parastar app, this code was builded using this versions :
+
+- node v18.13.0
+- npm 8.19.3
+
+stacks
+
+- react 18.2.0
+- next 13.4.19
+- zustand 4.4.1
+- tailwindcss 3.3.3
+- daisyui 3.7.4
 ## Getting Started
 
 First, run the development server:

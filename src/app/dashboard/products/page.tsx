@@ -1,43 +1,49 @@
 "use client";
 import Image from "next/image";
 import handphoneImage from "../../../assets/images/samsung.png";
-import shareImage from "../../../assets/images/Share.png";
 import { rupiahFormat } from "@trex/utils/helpers";
 import { toastSuccess } from "@trex/utils/toast";
 import assets from "@trex/assets";
+import Link from "next/link";
 
 const products = [
   {
+    id: 1,
     title: "Samsung Galaxy S20 FE RAM 8gb Internal 250gb",
     image: handphoneImage,
     price: 100000000,
     margin: 20000,
   },
   {
+    id: 2,
     title: "Samsung S22 Ultra",
     image: handphoneImage,
     price: 100000000,
     margin: 20000,
   },
   {
+    id: 3,
     title: "Samsung S21 FE",
     image: handphoneImage,
     price: 100000000,
     margin: 20000,
   },
   {
+    id: 4,
     title: "Xiaomi 12",
     image: handphoneImage,
     price: 100000000,
     margin: 20000,
   },
   {
+    id: 5,
     title: "Samsung S20 FE",
     image: handphoneImage,
     price: 100000000,
     margin: 20000,
   },
   {
+    id: 6,
     title: "Samsung S20 FE",
     image: handphoneImage,
     price: 100000000,
@@ -64,9 +70,11 @@ export default function Products() {
             />
             <hr />
             <div className="p-5 space-y-1">
-              <h2 className="text-base font-bold truncate cursor-pointer">
-                {product.title}
-              </h2>
+              <Link href={`products/${encodeURIComponent(product.id)}`} className="text-base font-bold cursor-pointer">
+                <p className="truncate">
+                  {product.title}
+                </p>
+              </Link>
               <p className="text-sm">{rupiahFormat(product.price)}</p>
               <p className="text-success text-xs font-semibold">
                 Margin {rupiahFormat(product.margin)}

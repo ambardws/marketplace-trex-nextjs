@@ -44,7 +44,7 @@ export default function HeaderHome() {
           <Image src={assets.TrexIcons.Cart} alt="cart" quality={80} className="z-10" />
           <Image src={assets.TrexIcons.MenuHamburger} alt="menu" quality={80} className="z-10"/>
         </div>
-        <div className="flex mt-5 w-full justify-evenly">
+        <div className="flex mt-5 w-full justify-between px-8">
           <Image
             src={logoToko}
             alt="logoToko"
@@ -59,8 +59,8 @@ export default function HeaderHome() {
         </div>
       </div>
 
-      <h1 className="text-sm font-bold mt-5 p-5">Kategori Produk</h1>
-      <div className="flex text-sm px-5 overflow-x-scroll space-x-3">
+      <h1 className="text-sm font-bold mt-5 p-8">Kategori Produk</h1>
+      <div className="flex text-sm px-8 overflow-x-scroll space-x-3">
         {categories.map((categorie) => (
           <div key={categorie.name}
             className={`h-max w-max py-2 px-5 rounded-full cursor-pointer flex items-center gap-1 ${

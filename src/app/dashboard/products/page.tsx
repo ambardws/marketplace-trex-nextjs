@@ -58,7 +58,7 @@ export default function Products() {
   };
 
   return (
-    <div className="p-5">
+    <div className="px-8">
       <h1 className="text-sm font-bold mt-5">Product List</h1>
       <div className="grid grid-cols-2 gap-5 mt-5">
         {products.map((product, index) => (
@@ -80,7 +80,7 @@ export default function Products() {
                 Margin {rupiahFormat(product.margin)}
               </p>
             </div>
-            <div className="flex p-5 justify-between">
+            <div className="flex p-5 space-x-2 justify-between">
               <div className="p-1 text-sm w-3/4 h-max bg-primary rounded-lg text-white cursor-pointer">
                 <p className="text-center" onClick={() => addToCart(product)}>
                   {" "}

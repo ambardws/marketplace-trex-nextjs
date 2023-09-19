@@ -92,7 +92,7 @@ export default function Cart() {
   return (
     <div>
       <HeaderPure title="Keranjang" />
-      <div className="p-5">
+      <div className="p-8">
         {datas.length > 1 ? (
           <div>
             <div className="flex justify-between text-sm">

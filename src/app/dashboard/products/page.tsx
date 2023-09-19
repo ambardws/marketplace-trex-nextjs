@@ -58,7 +58,7 @@ export default function Products() {
   };
 
   return (
-    <div className="px-8">
+    <div className="px-5">
       <h1 className="text-sm font-bold mt-5">Product List</h1>
       <div className="grid grid-cols-2 gap-5 mt-5">
         {products.map((product, index) => (

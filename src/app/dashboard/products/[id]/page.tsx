@@ -142,7 +142,7 @@ export default function ProductDetail() {
           ></a>
         </div>
       </div>
-      <div className="p-8">
+      <div className="p-5">
         <div className="flex justify-between">
           <h2 className="text-base font-bold w-[80%]">{data.title}</h2>
           <div className="bg-red-100 rounded-lg w-12 h-10 flex items-center justify-center">

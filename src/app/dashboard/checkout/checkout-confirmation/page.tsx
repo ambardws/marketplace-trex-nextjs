@@ -55,26 +55,6 @@ export default function CheckoutConfirmation() {
   return (
     <div>
       <HeaderPure />
-      <div className="p-5 text-sm">
-        <h6 className="font-semibold">Checkout Produk</h6>
-        {datas.map((data, index) => (
-          <div className="flex border rounded-lg mt-3">
-            <Image
-              src={data.image}
-              alt="checkout-image"
-              className="h-24 w-28 object-cover"
-            />
-            <div className="border-l-[1px] p-2 space-y-2">
-              <h6 className="font-semibold">{data.title}</h6>
-              <h6 className="text-xs">Tipe: {data.variaty}</h6>
-              <div className="flex justify-between">
-                <h6 className="text-base-300">{data.count} Barang</h6>
-                <h6 className="font-bold">{rupiahFormat(data.price)}</h6>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
     </div>
   );
 }

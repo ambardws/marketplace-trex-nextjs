@@ -44,7 +44,7 @@ export default function HeaderHome() {
           <Image src={assets.TrexIcons.Cart} alt="cart" quality={80} className="z-10" />
           <Image src={assets.TrexIcons.MenuHamburger} alt="menu" quality={80} className="z-10"/>
         </div>
-        <div className="flex mt-5 w-full justify-evenly">
+        <div className="flex mt-5 w-full justify-between px-5">
           <Image
             src={logoToko}
             alt="logoToko"

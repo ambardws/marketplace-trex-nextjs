@@ -5,8 +5,9 @@ import handphoneImage from "../../../../assets/images/samsung.png";
 import Image from "next/image";
 import { rupiahFormat } from "@trex/utils/helpers";
 import assets from "@trex/assets";
+import { useRouter } from "next/navigation";
 
-let datasProduct = [
+const data = [
   {
     id: 1,
     title: "Samsung Galaxy S20 FE RAM 8gb Internal 250gb",
@@ -52,16 +53,15 @@ let datasProduct = [
 ];
 
 export default function Cart() {
-  const [datas, setDatas] = useState(datasProduct);
+  const [datas, setDatas] = useState(data);
   const [cart, setCart] = useState(datas.map(() => 1)); // Membuat array jumlah barang dengan nilai awal 1
   const [selectAll, setSelectAll] = useState(false);
   const [selectedProducts, setSelectedProducts] = useState<number[]>([]);
-  console.log(cart);
+  const router = useRouter();
 
   // Fungsi untuk menambah jumlah barang
   const increment = (index: number) => {
     const newCart = [...cart];
-    console.log(newCart);
     newCart[index]++;
     setCart(newCart);
   };
@@ -84,6 +84,18 @@ export default function Cart() {
     }
   };
 
+  const removeProduct = (id: number) => {
+    // Buat salinan data baru tanpa produk yang dihapus
+    const updatedDatas = datas.filter((data) => data.id !== id);
+    const updateCart = cart.filter((data, index) => index + 1 !== id);
+    setCart(updateCart);
+    setDatas(updatedDatas);
+  };
+
+  const handleCheckout = () => {
+    router.push("/dashboard/checkout/checkout-confirmation")
+  };
+
   const isProductSelected = (productId: number) =>
     selectedProducts.includes(productId);
 
@@ -93,7 +105,7 @@ export default function Cart() {
     <div>
       <HeaderPure title="Keranjang" />
       <div className="p-5">
-        {datas.length > 1 ? (
+        {datas.length > 0 ? (
           <div>
             <div className="flex justify-between text-sm">
               <div className="flex space-x-3">
@@ -132,11 +144,11 @@ export default function Cart() {
                     className="checkbox w-5 h-5"
                     onChange={() => toggleSelect(data.id)}
                   />
-                  <div className="border rounded-md py-2">
+                  <div className="border rounded-md p-2">
                     <Image
                       src={data.image}
                       alt="cart-photo"
-                      className="h-14 w-16"
+                      className="h-24 w-28 object-cover"
                     />
                   </div>
                   <div className="flex flex-col justify-evenly">
@@ -151,7 +163,8 @@ export default function Cart() {
                   <Image
                     src={assets.TrexIcons.Trash}
                     alt="trash"
-                    className="h-6 w-6 mt-5 ml-4"
+                    className="h-6 w-6 mt-5 ml-4 cursor-pointer"
+                    onClick={() => removeProduct(data.id)}
                   />
                   <div className="flex space-x-5 mt-4">
                     <button
@@ -177,7 +190,7 @@ export default function Cart() {
               </div>
             ))}
 
-            <div className="mt-10 flex justify-between px-2">
+            <div className="mt-10 flex justify-between px-5">
               <div className="text-sm">
                 <h6>Total</h6>
                 <h5 className="text-primary font-bold">
@@ -195,6 +208,7 @@ export default function Cart() {
                   canCheckout ? "bg-primary" : "bg-gray-200 cursor-not-allowed"
                 }`}
                 disabled={!canCheckout}
+                onClick={() => handleCheckout()}
               >
                 Checkout ({selectedProducts.length})
               </button>

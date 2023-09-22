@@ -12,7 +12,7 @@ export default function HeaderPure({ title }: { title?: string }) {
   }
   return (
     <header>
-      <div className="flex justify-between pt-5 px-10 shadow-md h-[100px]">
+      <div className="flex justify-between pt-5 px-8 shadow-md h-[100px]">
         <div onClick={() => back()} className="space-x-2 cursor-pointer flex">
           <Image src={assets.TrexIcons.Back} alt="back" className="inline-block"/>
           <h6 className="text-base font-bold pt-7">{title}</h6>

@@ -9,7 +9,7 @@ import logo from "../../../src/assets/images/logo.png";
 export default function Footer() {
   const logos = [facebook, instagram, twitter, gmail, youtube];
   return (
-    <footer className="mt-20">
+    <footer className="mt-20 p-3">
       <div className="w-11/12 h-0.5 bg-zinc-300 mx-auto" />
       <div className="h-96 px-5 flex-col justify-between items-start inline-flex mt-5">
         <div className="flex-col justify-start items-start gap-5 flex">

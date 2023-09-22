@@ -30,6 +30,22 @@ export const rupiahFormat = (num: number) =>
     minimumFractionDigits: 0,
   }).format(num || 0);
 
+export const calculateDiscountedPrice = (
+  originalPrice: number,
+  discountPercentage: number
+) => {
+  if (originalPrice < 0 || discountPercentage < 0 || discountPercentage > 100) {
+    throw new Error(
+      "Harga asli dan persentase diskon harus positif dan persentase diskon tidak boleh lebih dari 100."
+    );
+  }
+
+  const discountAmount = (originalPrice * discountPercentage) / 100;
+  const discountedPrice = originalPrice - discountAmount;
+
+  return discountedPrice;
+};
+
 export const getDuration = (start = 0, end = 0) =>
   intervalToDuration({ start, end });
 

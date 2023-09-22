@@ -62,7 +62,7 @@ export default function HeaderHome() {
       <h1 className="text-sm font-bold mt-5 p-5">Kategori Produk</h1>
       <div className="flex text-sm px-5 overflow-x-scroll space-x-3">
         {categories.map((categorie) => (
-          <div
+          <div key={categorie.name}
             className={`h-max w-max py-2 px-5 rounded-full cursor-pointer flex items-center gap-1 ${
               active === categorie.name
                 ? "text-primary bg-red-100 border border-primary font-semibold"

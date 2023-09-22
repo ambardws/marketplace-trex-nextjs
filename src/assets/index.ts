@@ -12,6 +12,13 @@ import Handphone from "./icons/handphone.png";
 import Chat from "./icons/chat.svg";
 import Back from "./icons/back.svg";
 import Trash from "./icons/trash.svg";
+import BCA from "./icons/bca.png";
+import Mandiri from "./icons/mandiri.png";
+import BSI from "./icons/bsi.png";
+import BRI from "./icons/bri.png";
+import BNI from "./icons/bni.png";
+import Alfamart from "./icons/alfamart.png";
+import Indomaret from "./icons/indomaret.png";
 import Samsung from "./images/samsung.png";
 import Empty from "./images/empty.png";
 
@@ -33,7 +40,14 @@ const assets = {
     Handphone,
     Back,
     Chat,
-    Trash
+    Trash,
+    BCA,
+    BSI,
+    BRI,
+    Mandiri,
+    BNI,
+    Alfamart,
+    Indomaret
   },
 };
 export default assets;

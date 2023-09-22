@@ -3,58 +3,43 @@ import { HeaderPure } from "@trex/components";
 import { rupiahFormat } from "@trex/utils/helpers";
 import Image from "next/image";
 import React from "react";
-
-const datas = [
-  {
-    id: 1,
-    title: "Samsung Galaxy S20 FE RAM 8gb Internal 250gb",
-    image: assets.TrexImages.Samsung,
-    price: 2500000,
-    margin: 20000,
-    available: 85,
-    variaty: "6 / 12",
-    merk: "Samsung",
-    category: "Handphone",
-    kode: 8771231,
-    dimension: "57 x 49 x 10",
-    weight: "0. 75kg",
-    fromCity: "Tangerang",
-    description: `Ukuran layar : 6.6 inches, 104.9 cm2 (~82.5% screen-to-body ratio) 1080 x 2408 pixels, 20:9 ratio (~400 ppi density)
-    Chipset Qualcomm SM6225 Snapdragon 680 4G (6 nm) dengan CPU Octa-core (4x2.4 GHz Kryo 265 Gold & 4x1.9 GHz Kryo 265 Silver)
-    <br /> <br />
-    Ukuran layar : 6.6 inches, 104.9 cm2 (~82.5% screen-to-body ratio) 1080 x 2408 pixels, 20:9 ratio (~400 ppi density)
-    Chipset Qualcomm SM6225 Snapdragon 680 4G (6 nm) dengan CPU Octa-core (4x2.4 GHz Kryo 265 Gold & 4x1.9 GHz Kryo 265 Silver)`,
-    discount: 5,
-    count: 1,
-  },
-  {
-    id: 2,
-    title: "Samsung Galaxy S21 FE RAM 8gb Internal 250gb",
-    image: assets.TrexImages.Samsung,
-    price: 2500000,
-    margin: 20000,
-    available: 85,
-    variaty: "6 / 12",
-    merk: "Samsung",
-    category: "Handphone",
-    kode: 8771231,
-    dimension: "57 x 49 x 10",
-    weight: "0. 75kg",
-    fromCity: "Tangerang",
-    description: `Ukuran layar : 6.6 inches, 104.9 cm2 (~82.5% screen-to-body ratio) 1080 x 2408 pixels, 20:9 ratio (~400 ppi density)
-    Chipset Qualcomm SM6225 Snapdragon 680 4G (6 nm) dengan CPU Octa-core (4x2.4 GHz Kryo 265 Gold & 4x1.9 GHz Kryo 265 Silver)
-    <br /> <br />
-    Ukuran layar : 6.6 inches, 104.9 cm2 (~82.5% screen-to-body ratio) 1080 x 2408 pixels, 20:9 ratio (~400 ppi density)
-    Chipset Qualcomm SM6225 Snapdragon 680 4G (6 nm) dengan CPU Octa-core (4x2.4 GHz Kryo 265 Gold & 4x1.9 GHz Kryo 265 Silver)`,
-    discount: 5,
-    count: 1,
-  },
-];
+import { datasCheckout } from "@trex/stores/TempData";
+import PickUpMethod from "@trex/components/cart/PickUpMethod";
+import DeliveryMethod from "@trex/components/cart/DeliveryMethod";
 
 export default function CheckoutConfirmation() {
   return (
     <div>
       <HeaderPure />
+      <div className="p-5 text-sm">
+        <h6 className="font-semibold">Checkout Produk</h6>
+        {datasCheckout.orders.map((data, index) => (
+          <div key={index} className="flex border rounded-lg mt-3">
+            <Image
+              src={data.image}
+              alt="checkout-image"
+              className="h-24 w-28 object-cover"
+            />
+            <div className="border-l-[1px] p-2 space-y-2">
+              <h6 className="font-semibold">{data.title}</h6>
+              <h6 className="text-xs">Tipe: {data.variaty}</h6>
+              <div className="flex justify-between">
+                <h6 className="text-base-300">{data.count} Barang</h6>
+                <h6 className="font-bold">{rupiahFormat(data.price)}</h6>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <hr className="border-4 mt-4" />
+      {
+        datasCheckout.method === 1 ? (
+          <PickUpMethod />
+        ) : (
+          <DeliveryMethod />
+        )
+      }
+     
     </div>
   );
 }

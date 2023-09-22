@@ -1,6 +1,7 @@
 import React from "react";
 import { AutoComplete, Input, InputPhoneNumber, TextArea } from "../input";
 import { FiMapPin } from "react-icons/fi";
+import Link from "next/link";
 
 const dataAuto = [
   "Jakarta",
@@ -41,9 +42,11 @@ export default function Address() {
           <Input type="number" label="RW" />
         </div>
       </div>
-      <button className="btn w-full rounded-md mt-10 bg-primary text-white">
-        Lanjutkan
-      </button>
+      <Link href={"/dashboard/checkout/checkout-choose-billing-method"}>
+        <button className="btn w-full rounded-md mt-10 bg-primary text-white">
+          Lanjutkan
+        </button>
+      </Link>
     </div>
   );
 }

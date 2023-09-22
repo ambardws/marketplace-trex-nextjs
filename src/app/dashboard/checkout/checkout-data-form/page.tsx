@@ -93,7 +93,7 @@ export default function CheckoutDataForm() {
         </label>
         {deliveryMethod === 1 && (
           <div className="form-control w-full mb-5">
-            <Input label="Nama Anda" />
+            <Input type="text" label="Nama Anda" />
             <InputPhoneNumber label="Nomor Telepon" />
           </div>
         )}

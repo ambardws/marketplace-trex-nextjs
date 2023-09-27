@@ -69,7 +69,7 @@ export default function DetailPayment({ dataCheckout }: { dataCheckout: any }) {
             <p>{rupiahFormat(subtotal)}</p>
           </div>
         </div>
-        <Link className="flex justify-center items-center" href={"/dashboard/checkout/checkout-choose-billing-method"}>
+        <Link className="flex justify-center items-center" href={"/dashboard/checkout/checkout-billing-how-to"}>
           <button className="btn w-11/12 rounded-md mt-10 bg-primary text-white">
             Bayar
           </button>

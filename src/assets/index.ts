@@ -3,10 +3,10 @@ import Logo from "./images/logo.png";
 import Cart from "./icons/cart.svg";
 import MenuHamburger from "./icons/menu-hamburger.svg";
 import Whatsapp from "./icons/whatsapp.png";
-import Share from "./icons/Share.png";
+import Share from "./icons/Share.svg";
 import Search from "./icons/search.svg";
-import Google from "./icons/google.png";
-import Facebook from "./icons/facebook.png"
+import Google from "./icons/google.svg";
+import Facebook from "./icons/facebookk.svg"
 import Cable from "./icons/cable.svg";
 import Handphone from "./icons/handphone.png";
 import Chat from "./icons/chat.svg";

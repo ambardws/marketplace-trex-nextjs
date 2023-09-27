@@ -6,6 +6,7 @@ import cable from "../../assets/images/cable.svg";
 import handphone from "../../assets/images/handphone.png";
 import { useState } from "react";
 import assets from "@trex/assets";
+import Link from "next/link";
 
 const categories = [
   { name: "Semua", icon: "" },
@@ -41,8 +42,20 @@ export default function HeaderHome() {
               className="input input-bordered rounded-full w-full h-8 text-xs pl-8"
             />
           </div>
-          <Image src={assets.TrexIcons.Cart} alt="cart" quality={80} className="z-10" />
-          <Image src={assets.TrexIcons.MenuHamburger} alt="menu" quality={80} className="z-10"/>
+          <Link href={"/dashboard/checkout/cart"} className="z-10 mt-1">
+            <Image
+              src={assets.TrexIcons.Cart}
+              alt="cart"
+              quality={80}
+              className="z-10"
+            />
+          </Link>
+          <Image
+            src={assets.TrexIcons.MenuHamburger}
+            alt="menu"
+            quality={80}
+            className="z-10"
+          />
         </div>
         <div className="flex mt-5 w-full justify-between px-5">
           <Image
@@ -53,7 +66,11 @@ export default function HeaderHome() {
           />
           <h2 className="font-bold z-10 my-auto">Toko Lingga</h2>
           <div className="flex bg-primary text-white h-max w-max rounded-lg p-2 space-x-2 z-10">
-            <Image src={assets.TrexIcons.Whatsapp} alt="logoWA" className="h-5 w-5" />
+            <Image
+              src={assets.TrexIcons.Whatsapp}
+              alt="logoWA"
+              className="h-5 w-5"
+            />
             <p className="text-sm font-medium my-auto">Chat Toko</p>
           </div>
         </div>
@@ -62,7 +79,8 @@ export default function HeaderHome() {
       <h1 className="text-sm font-bold mt-5 p-5">Kategori Produk</h1>
       <div className="flex text-sm px-5 overflow-x-scroll space-x-3">
         {categories.map((categorie) => (
-          <div key={categorie.name}
+          <div
+            key={categorie.name}
             className={`h-max w-max py-2 px-5 rounded-full cursor-pointer flex items-center gap-1 ${
               active === categorie.name
                 ? "text-primary bg-red-100 border border-primary font-semibold"

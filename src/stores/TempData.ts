@@ -109,7 +109,7 @@ export const datasCheckout = {
   name: "Ambar Dwi Saputra",
   phone: "087780647374",
   address: "Jl. Mawar V No.42 RT003 RW002 Kel. Jakasampurna Kec. Bekasi Barat",
-  method: 1,
+  method: 2,
   orders: [
     {
       id: 1,

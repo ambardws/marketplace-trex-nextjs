@@ -42,11 +42,6 @@ export default function Address() {
           <Input type="number" label="RW" />
         </div>
       </div>
-      <Link href={"/dashboard/checkout/checkout-choose-billing-method"}>
-        <button className="btn w-full rounded-md mt-10 bg-primary text-white">
-          Lanjutkan
-        </button>
-      </Link>
     </div>
   );
 }

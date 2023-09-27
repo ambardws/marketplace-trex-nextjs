@@ -1,13 +1,9 @@
 import Image from "next/image";
-import facebook from "../../../src/assets/icons/facebook-2.png";
-import instagram from "../../../src/assets/icons/instagram.png";
-import gmail from "../../../src/assets/icons/gmail.png";
-import youtube from "../../../src/assets/icons/youtube.png";
-import twitter from "../../../src/assets/icons/twitter.png";
 import logo from "../../../src/assets/images/logo.png";
+import assets from "@trex/assets";
 
 export default function Footer() {
-  const logos = [facebook, instagram, twitter, gmail, youtube];
+  const logos = [assets.TrexMedsos.Facebook2, assets.TrexMedsos.Instagram, assets.TrexMedsos.Twitter, assets.TrexMedsos.Gmail, assets.TrexMedsos.Youtube];
   return (
     <footer className="mt-20 p-3">
       <div className="w-11/12 h-0.5 bg-zinc-300 mx-auto" />
@@ -43,7 +39,8 @@ export default function Footer() {
                   alt={logo.toString()}
                   key={index}
                   src={logo}
-                  className="w-5 h-5 cursor-pointer"
+                  className="cursor-pointer"
+                
                 />
               ))}
             </div>

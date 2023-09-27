@@ -2,10 +2,9 @@
 import assets from "@trex/assets";
 import { HeaderPure, Input, InputPhoneNumber } from "@trex/components";
 import Address from "@trex/components/address/Address";
-import { AutoComplete, TextArea } from "@trex/components/input";
 import { rupiahFormat } from "@trex/utils/helpers";
-import { Button } from "antd";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 
 const datas = [
@@ -54,7 +53,6 @@ const datas = [
     count: 1,
   },
 ];
-
 
 export default function CheckoutDataForm() {
   const [deliveryMethod, setDeliveryMethod] = useState(0);
@@ -108,9 +106,12 @@ export default function CheckoutDataForm() {
           />
         </label>
 
-        {deliveryMethod === 2 && (
-          <Address />
-        )}
+        {deliveryMethod === 2 && <Address />}
+        <Link href={"/dashboard/checkout/checkout-choose-billing-method"}>
+          <button className="btn w-full rounded-md mt-10 bg-primary text-white">
+            Lanjutkan
+          </button>
+        </Link>
       </div>
     </div>
   );

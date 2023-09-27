@@ -8,33 +8,33 @@ import { FiChevronRight } from "react-icons/fi";
 const dataBank = [
   {
     title: "BANK BCA",
-    logo: assets.TrexIcons.BCA,
+    logo: assets.TrexPayments.BCA,
   },
   {
     title: "BANK BNI",
-    logo: assets.TrexIcons.BNI,
+    logo: assets.TrexPayments.BNI,
   },
   {
     title: "Mandiri",
-    logo: assets.TrexIcons.Mandiri,
+    logo: assets.TrexPayments.Mandiri,
   },
   {
     title: "Bank Syariah Indonesia",
-    logo: assets.TrexIcons.BSI,
+    logo: assets.TrexPayments.BSI,
   },
   {
     title: "Bank BRI",
-    logo: assets.TrexIcons.BRI,
+    logo: assets.TrexPayments.BRI,
   },
 ];
 const dataRetail = [
   {
     title: "Alfamart",
-    logo: assets.TrexIcons.Alfamart,
+    logo: assets.TrexPayments.Alfamart,
   },
   {
     title: "Indomaret",
-    logo: assets.TrexIcons.Indomaret,
+    logo: assets.TrexPayments.Indomaret,
   },
 ];
 

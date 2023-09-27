@@ -25,3 +25,16 @@ body {
 ::-webkit-scrollbar {
   display: none;
 }
+
+.ant-drawer {
+  max-width: 500px;
+  margin: auto;
+  z-index: 9999999;
+}
+
+.ant-drawer-content-wrapper {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none !important;
+}
+

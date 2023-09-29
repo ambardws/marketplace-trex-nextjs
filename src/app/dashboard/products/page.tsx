@@ -53,7 +53,6 @@ const products = [
 
 export default function Products() {
   const addToCart = (product: Cart) => {
-    console.log(product);
     toastSuccess("Produk Berhasil di tambahkan ke keranjang");
   };
 

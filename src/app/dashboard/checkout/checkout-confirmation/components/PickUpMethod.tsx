@@ -4,7 +4,6 @@ import React from "react";
 
 export default function PickUpMethod({dataCheckout} : {dataCheckout: any}) {
 const totalPrice = dataCheckout.orders.reduce((total: number, order: {price: number}) => {
-  console.log(order)
   return total + order.price;
 }, 0);
   return (

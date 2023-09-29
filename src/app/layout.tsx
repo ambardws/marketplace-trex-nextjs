@@ -1,17 +1,17 @@
 import { Footer } from "@trex/components";
-import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "./globals.css";
 
 import StyledComponentsRegistry from "../../lib/AntdRegistry";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "T-REX",
-  description: "T-Rex Marketplace",
+  description: "T-Rex Marketplace"
 };
 
 export default function RootLayout({
@@ -21,6 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" data-theme="trex">
+      <link rel="icon" href="/Favicon.png" />
       <body className={inter.className}>
         <ToastContainer
           position="top-center"

@@ -3,6 +3,7 @@ import { rupiahFormat } from "@trex/utils/helpers";
 import React from "react";
 import PaymentInfo from "./components/PaymentInfo";
 import PaymentGuide from "./components/PaymentGuide";
+import Link from "next/link";
 
 export default function CheckoutBillingHowTo() {
   return (
@@ -16,13 +17,13 @@ export default function CheckoutBillingHowTo() {
         <PaymentInfo />
       </div>
       <PaymentGuide />
-      <div className="p-5">
-        <button
-          className="btn w-full rounded-lg mt-10 bg-white text-primary border-1 border-primary normal-case"
-        >
-          Belanja Lagi
-        </button>
-      </div>
+      <Link href={"/dashboard/home"}>
+        <div className="p-5">
+          <button className="btn w-full rounded-lg mt-10 bg-white text-primary border-1 border-primary normal-case hover:border-1 hover:border-primary">
+            Belanja Lagi
+          </button>
+        </div>
+      </Link>
     </div>
   );
 }

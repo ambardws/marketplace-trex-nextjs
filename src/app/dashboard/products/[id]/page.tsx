@@ -57,7 +57,6 @@ export default function ProductDetail() {
   };
 
   const addToCart = (product: Cart) => {
-    console.log(product);
     toastSuccess("Produk Berhasil di tambahkan ke keranjang");
   };
 

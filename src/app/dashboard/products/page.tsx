@@ -65,7 +65,7 @@ export default function Products() {
           <div className="card bg-base-100 border" key={index}>
             <Link
               href={`products/${encodeURIComponent(product.id)}`}
-              className="text-base font-bold cursor-pointer"
+              className="cursor-pointer"
             >
               <Image
                 src={handphoneImage}
@@ -74,9 +74,9 @@ export default function Products() {
               />
               <hr />
               <div className="p-5 space-y-1">
-                <p className="truncate">{product.title}</p>
-                <p className="text-sm">{rupiahFormat(product.price)}</p>
-                <p className="text-success text-xs font-semibold">
+                <p className="line-clamp-2 h-[42px] text-sm font-semibold">{product.title}</p>
+                <p className="text-sm font-normal">{rupiahFormat(product.price)}</p>
+                <p className="text-success text-xs font-bold">
                   Margin {rupiahFormat(product.margin)}
                 </p>
               </div>

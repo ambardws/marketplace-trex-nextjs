@@ -22,11 +22,6 @@ export default function HeaderPure({ title }: { title?: string }) {
           />
           <h6 className="text-base font-bold pt-7">{title}</h6>
         </div>
-        {!pathname.includes("checkout/checkout-") && (
-          <Link href={"/dashboard/checkout/cart"} className="pt-7">
-            <Image src={assets.TrexIcons.Cart} alt="cart" />
-          </Link>
-        )}
       </div>
     </header>
   );

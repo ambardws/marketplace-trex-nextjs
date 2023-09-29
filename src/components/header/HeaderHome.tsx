@@ -40,8 +40,8 @@ export default function HeaderHome({
                   className="absolute -top-2 -right-2 w-[187px] h-[163px]"
                 />
               </div>
-              <div className="flex pt-10 w-full space-x-5 justify-center">
-                <div className="relative w-3/5">
+              <div className="flex pt-10 w-full space-x-5 px-5">
+                <div className="relative w-[80%]">
                   <Image
                     src={assets.TrexIcons.Search}
                     alt="search"

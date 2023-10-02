@@ -3,62 +3,19 @@ import { HeaderPure } from "@trex/components";
 import { rupiahFormat } from "@trex/utils/helpers";
 import Image from "next/image";
 import React from "react";
+import { datasCheckout } from "@trex/stores/TempData";
+import DeliveryMethod from "@trex/app/dashboard/checkout/checkout-confirmation/components/DeliveryMethod";
+import PickUpMethod from "@trex/app/dashboard/checkout/checkout-confirmation/components/PickUpMethod";
+import DetailPayment from "./components/DetailPayment";
 
-const datas = [
-  {
-    id: 1,
-    title: "Samsung Galaxy S20 FE RAM 8gb Internal 250gb",
-    image: assets.TrexImages.Samsung,
-    price: 2500000,
-    margin: 20000,
-    available: 85,
-    variaty: "6 / 12",
-    merk: "Samsung",
-    category: "Handphone",
-    kode: 8771231,
-    dimension: "57 x 49 x 10",
-    weight: "0. 75kg",
-    fromCity: "Tangerang",
-    description: `Ukuran layar : 6.6 inches, 104.9 cm2 (~82.5% screen-to-body ratio) 1080 x 2408 pixels, 20:9 ratio (~400 ppi density)
-    Chipset Qualcomm SM6225 Snapdragon 680 4G (6 nm) dengan CPU Octa-core (4x2.4 GHz Kryo 265 Gold & 4x1.9 GHz Kryo 265 Silver)
-    <br /> <br />
-    Ukuran layar : 6.6 inches, 104.9 cm2 (~82.5% screen-to-body ratio) 1080 x 2408 pixels, 20:9 ratio (~400 ppi density)
-    Chipset Qualcomm SM6225 Snapdragon 680 4G (6 nm) dengan CPU Octa-core (4x2.4 GHz Kryo 265 Gold & 4x1.9 GHz Kryo 265 Silver)`,
-    discount: 5,
-    count: 1,
-  },
-  {
-    id: 2,
-    title: "Samsung Galaxy S21 FE RAM 8gb Internal 250gb",
-    image: assets.TrexImages.Samsung,
-    price: 2500000,
-    margin: 20000,
-    available: 85,
-    variaty: "6 / 12",
-    merk: "Samsung",
-    category: "Handphone",
-    kode: 8771231,
-    dimension: "57 x 49 x 10",
-    weight: "0. 75kg",
-    fromCity: "Tangerang",
-    description: `Ukuran layar : 6.6 inches, 104.9 cm2 (~82.5% screen-to-body ratio) 1080 x 2408 pixels, 20:9 ratio (~400 ppi density)
-    Chipset Qualcomm SM6225 Snapdragon 680 4G (6 nm) dengan CPU Octa-core (4x2.4 GHz Kryo 265 Gold & 4x1.9 GHz Kryo 265 Silver)
-    <br /> <br />
-    Ukuran layar : 6.6 inches, 104.9 cm2 (~82.5% screen-to-body ratio) 1080 x 2408 pixels, 20:9 ratio (~400 ppi density)
-    Chipset Qualcomm SM6225 Snapdragon 680 4G (6 nm) dengan CPU Octa-core (4x2.4 GHz Kryo 265 Gold & 4x1.9 GHz Kryo 265 Silver)`,
-    discount: 5,
-    count: 1,
-  },
-];
-
-export default function CheckoutConfirmation() {
+export default function CheckoutConfirmation({dataCheckout} : {dataCheckout: any}) {
   return (
     <div>
       <HeaderPure />
       <div className="p-5 text-sm">
         <h6 className="font-semibold">Checkout Produk</h6>
-        {datas.map((data, index) => (
-          <div className="flex border rounded-lg mt-3">
+        {datasCheckout.orders.map((data, index) => (
+          <div key={index} className="flex border rounded-lg mt-3">
             <Image
               src={data.image}
               alt="checkout-image"
@@ -66,7 +23,7 @@ export default function CheckoutConfirmation() {
             />
             <div className="border-l-[1px] p-2 space-y-2">
               <h6 className="font-semibold">{data.title}</h6>
-              <h6 className="text-xs">Tipe: {data.variaty}</h6>
+              <h6 className="text-xs"> {data.variaty}</h6>
               <div className="flex justify-between">
                 <h6 className="text-base-300">{data.count} Barang</h6>
                 <h6 className="font-bold">{rupiahFormat(data.price)}</h6>
@@ -75,6 +32,16 @@ export default function CheckoutConfirmation() {
           </div>
         ))}
       </div>
+      <hr className="border-4 mt-4" />
+      {
+        datasCheckout.method === 1 ? (
+          <PickUpMethod dataCheckout={datasCheckout} />
+        ) : (
+          <DeliveryMethod dataCheckout={datasCheckout} />
+        )
+      }
+      <DetailPayment dataCheckout={datasCheckout} />
+     
     </div>
   );
 }

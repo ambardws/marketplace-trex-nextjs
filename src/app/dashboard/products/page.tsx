@@ -63,23 +63,24 @@ export default function Products() {
       <div className="grid grid-cols-2 gap-5 mt-5">
         {products.map((product, index) => (
           <div className="card bg-base-100 border" key={index}>
-            <Image
-              src={handphoneImage}
-              alt="cart"
-              className="w-40 h-[150px] mx-auto"
-            />
-            <hr />
-            <div className="p-5 space-y-1">
-              <Link href={`products/${encodeURIComponent(product.id)}`} className="text-base font-bold cursor-pointer">
-                <p className="truncate">
-                  {product.title}
+            <Link
+              href={`products/${encodeURIComponent(product.id)}`}
+              className="text-base font-bold cursor-pointer"
+            >
+              <Image
+                src={handphoneImage}
+                alt="cart"
+                className="w-40 h-[150px] mx-auto"
+              />
+              <hr />
+              <div className="p-5 space-y-1">
+                <p className="truncate">{product.title}</p>
+                <p className="text-sm">{rupiahFormat(product.price)}</p>
+                <p className="text-success text-xs font-semibold">
+                  Margin {rupiahFormat(product.margin)}
                 </p>
-              </Link>
-              <p className="text-sm">{rupiahFormat(product.price)}</p>
-              <p className="text-success text-xs font-semibold">
-                Margin {rupiahFormat(product.margin)}
-              </p>
-            </div>
+              </div>
+            </Link>
             <div className="flex p-5 space-x-2 justify-between">
               <div className="p-1 text-sm w-3/4 h-max bg-primary rounded-lg text-white cursor-pointer">
                 <p className="text-center" onClick={() => addToCart(product)}>

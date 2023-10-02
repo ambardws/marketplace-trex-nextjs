@@ -93,7 +93,7 @@ export default function Cart() {
   };
 
   const handleCheckout = () => {
-    router.push("/dashboard/checkout/checkout-confirmation")
+    router.push("/dashboard/checkout/checkout-data-form")
   };
 
   const isProductSelected = (productId: number) =>

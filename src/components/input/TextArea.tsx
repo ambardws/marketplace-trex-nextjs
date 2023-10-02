@@ -1,13 +1,14 @@
-export default function InputPhoneNumber({label}: {label: string}) {
+import React from "react";
+
+export default function TextArea({label}: {label: string}) {
   return (
     <div>
-      {" "}
       <label className="label pl-0 mt-2">
         <span className="label-text">
           {label} <span className="text-primary">*</span>
         </span>
       </label>
-      <input type="number" className="input input-bordered w-full" />
+      <textarea className="textarea textarea-bordered textarea-md w-full" />
     </div>
   );
 }

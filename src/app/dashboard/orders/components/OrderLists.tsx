@@ -1,7 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import { rupiahFormat } from "@trex/utils/helpers";
-import { ListOrders, classStatus } from "@trex/stores/TempData";
+import { ListOrders } from "@trex/stores/TempData";
+
+export const classStatus = {
+  deliver: `bg-info text-secondary`,
+  waitingPayment: `bg-base-200 text-slate-400`,
+  process: `bg-orange-100 text-orange-500`,
+  finished: `bg-green-100 text-success`,
+};
 
 export default function OrderLists() {
   return (
@@ -45,9 +52,9 @@ export default function OrderLists() {
                     </div>
                   </div>
                   {order.items.map((item, index) => (
-                    <div className="pb-2">
+                    <div className="pb-2" key={index}>
                       {index === 0 ? (
-                        <div key={index} className="flex space-x-3">
+                        <div key={item.merk} className="flex space-x-3">
                           <div className="border h-max p-1 rounded-md mt-3">
                             <Image
                               src={item.image}

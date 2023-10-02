@@ -1,6 +1,6 @@
 "use client";
 
-import { HeaderPure } from "@trex/components";
+import { HeaderHome, HeaderPure } from "@trex/components";
 import { useState } from "react";
 import assets from "@trex/assets";
 import Image from "next/image";
@@ -57,13 +57,12 @@ export default function ProductDetail() {
   };
 
   const addToCart = (product: Cart) => {
-    console.log(product);
     toastSuccess("Produk Berhasil di tambahkan ke keranjang");
   };
 
   return (
     <div>
-      <HeaderPure />
+      <HeaderHome cart={true} />
       <div className="bg-base-200">
         <div className="carousel w-full">
           <div id="item1" className="carousel-item w-full">

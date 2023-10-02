@@ -4,13 +4,6 @@ import { rupiahFormat } from "@trex/utils/helpers";
 import { ListOrders, classStatus } from "@trex/stores/TempData";
 import Link from "next/link";
 
-// export const classStatus = {
-//   deliver: `bg-info text-secondary`,
-//   waitingPayment: `bg-base-200 text-slate-400`,
-//   process: `bg-orange-100 text-orange-500`,
-//   finished: `bg-green-100 text-success`,
-// };
-
 export default function OrderLists() {
   return (
     <>
@@ -27,7 +20,7 @@ export default function OrderLists() {
               </div>
               {listOrder.orders.map((order, index) => (
                 <div key={index} className="border rounded-[10px] px-3 hover:bg-slate-100 h-[236px]">
-                  <Link href={"/tes"}>
+                  <Link href={`orders/${encodeURIComponent(listOrder.kodeTransaksi)}`}>
                     <div className="flex justify-between flex-nowrap text-xs py-3">
                       <div
                         className={`font-bold rounded-[40px] text-white px-2 py-1 ${

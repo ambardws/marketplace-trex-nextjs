@@ -26,6 +26,7 @@ import Instagram from "./icons/media-socials/instagram.svg";
 import Twitter from "./icons/media-socials/twitter.svg";
 import Youtube from "./icons/media-socials/youtube.svg";
 import Facebook2 from "./icons/media-socials/facebook.svg";
+import ShareGradient from "./icons/Share-2.svg";
 
 const assets = {
   TrexImages: {
@@ -45,7 +46,8 @@ const assets = {
     Handphone,
     Back,
     Chat,
-    Trash
+    Trash,
+    ShareGradient
   },
   TrexMedsos: {
     Gmail,

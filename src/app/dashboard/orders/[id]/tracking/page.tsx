@@ -13,7 +13,7 @@ export default function page() {
               <div className="flex flex-col relative">
                 <div className="w-5 h-5 rounded-full bg-primary"></div>
                 {trackingOrders.length !== index+1 && (
-                  <div className="w-1 h-full border-primary border-l-2 absolute top-6 left-2.5"></div>
+                  <div className="w-0.5 h-full bg-primary absolute top-6 left-[9px]"></div>
                 )}
               </div>
               <div className="flex-col">

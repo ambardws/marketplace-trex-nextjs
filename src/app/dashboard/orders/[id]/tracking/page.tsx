@@ -11,9 +11,9 @@ export default function page() {
           <div key={index}>
             <div className="flex space-x-5">
               <div className="flex flex-col relative">
-                <div className="w-5 h-5 rounded-full bg-primary"></div>
+                <div className={`w-5 h-5 rounded-full ${index === 0 ? "bg-primary" : "bg-base-300"}`}></div>
                 {trackingOrders.length !== index+1 && (
-                  <div className="w-0.5 h-full bg-primary absolute top-6 left-[9px]"></div>
+                  <div className={`w-0.5 h-full absolute top-6 left-[9px] ${index === 0 ? "bg-primary" : "bg-base-300"}`}></div>
                 )}
               </div>
               <div className="flex-col">

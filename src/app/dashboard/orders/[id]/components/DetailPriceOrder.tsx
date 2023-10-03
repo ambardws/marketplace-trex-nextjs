@@ -1,10 +1,13 @@
-import { rupiahFormat } from "@trex/utils/helpers";
+"use client";
 import React from "react";
+import { rupiahFormat } from "@trex/utils/helpers";
 import { DetailMyOrder } from "@trex/stores/TempData";
 import Image from "next/image";
 import assets from "@trex/assets";
+import { useOrderStore } from "@trex/stores/order";
 
 export default function DetailPriceOrder() {
+  const { dataOrder } = useOrderStore();
   const subtotal = DetailMyOrder.orders.reduce(
     (total: number, order: { price: number }) => {
       return total + order.price;
@@ -37,13 +40,24 @@ export default function DetailPriceOrder() {
           <h6 className="font-medium">{rupiahFormat(subtotal + 20000)}</h6>
         </div>
       </div>
-      <div className="space-y-2 mt-10">
-        <button className="btn w-full rounded-lg bg-primary text-white normal-case">
-          Konfirmasi Pesanan
-        </button>
-        <button className="btn w-full rounded-lg bg-white text-primary border border-primary normal-case">
-          <Image src={assets.TrexIcons.ShareGradient} alt="share-gradien" /> Bagikan Struk Belanja
-        </button>
+      <div className="mt-10">
+        {dataOrder[0]?.status === "Menunggu Pembayaran" ? (
+          <div>
+            <button className="btn w-full rounded-lg bg-white text-primary border border-primary normal-case">
+              Lihat Cara Bayar
+            </button>
+          </div>
+        ) : (
+          <div className="space-y-2">
+            <button className="btn w-full rounded-lg bg-primary text-white normal-case">
+              Konfirmasi Pesanan
+            </button>
+            <button className="btn w-full rounded-lg bg-white text-primary border border-primary normal-case">
+              <Image src={assets.TrexIcons.ShareGradient} alt="share-gradien" />{" "}
+              Bagikan Struk Belanja
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

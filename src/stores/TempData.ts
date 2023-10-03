@@ -202,6 +202,11 @@ export const ListOrders = [
                           Chipset Qualcomm SM6225 Snapdragon 680 4G (6 nm) dengan CPU Octa-core (4x2.4 GHz Kryo 265 Gold & 4x1.9 GHz Kryo 265 Silver)`,
           },
         ],
+        name: "Ambar Dwi Saputra",
+        phone: "087780647374",
+        address:
+          "Jl. Mawar V No.42 RT003 RW002 Kel. Jakasampurna Kec. Bekasi Barat",
+        idOrder: "1",
         method: "Diantar Kerumah",
         status: "Dikirim",
         totalPrice: 2999000,
@@ -227,6 +232,11 @@ export const ListOrders = [
                       Chipset Qualcomm SM6225 Snapdragon 680 4G (6 nm) dengan CPU Octa-core (4x2.4 GHz Kryo 265 Gold & 4x1.9 GHz Kryo 265 Silver)`,
           },
         ],
+        name: "Ambar Dwi Saputra",
+        phone: "087780647374",
+        address:
+          "Jl. Mawar V No.42 RT003 RW002 Kel. Jakasampurna Kec. Bekasi Barat",
+        idOrder: "2",
         method: "Ambil Ditoko",
         status: "Menunggu Pembayaran",
         totalPrice: 1999000,
@@ -276,6 +286,11 @@ export const ListOrders = [
                           Chipset Qualcomm SM6225 Snapdragon 680 4G (6 nm) dengan CPU Octa-core (4x2.4 GHz Kryo 265 Gold & 4x1.9 GHz Kryo 265 Silver)`,
           },
         ],
+        name: "Ambar Dwi Saputra",
+        phone: "087780647374",
+        address:
+          "Jl. Mawar V No.42 RT003 RW002 Kel. Jakasampurna Kec. Bekasi Barat",
+        idOrder: "3",
         method: "Delivery",
         status: "Di Proses",
         totalPrice: 2999000,
@@ -301,6 +316,11 @@ export const ListOrders = [
                       Chipset Qualcomm SM6225 Snapdragon 680 4G (6 nm) dengan CPU Octa-core (4x2.4 GHz Kryo 265 Gold & 4x1.9 GHz Kryo 265 Silver)`,
           },
         ],
+        name: "Ambar Dwi Saputra",
+        phone: "087780647374",
+        address:
+          "Jl. Mawar V No.42 RT003 RW002 Kel. Jakasampurna Kec. Bekasi Barat",
+        idOrder: "4",
         method: "COD",
         status: "Selesai",
         totalPrice: 1999000,
@@ -310,10 +330,10 @@ export const ListOrders = [
 ];
 
 export const classStatus = {
-  deliver: `bg-info text-secondary`,
-  waitingPayment: `bg-base-200 text-slate-400`,
-  process: `bg-orange-100 text-orange-500`,
-  finished: `bg-green-100 text-success`,
+  deliver: "bg-info text-secondary",
+  waitingPayment: "bg-base-200 text-slate-400",
+  process: "bg-orange-100 text-orange-500",
+  finished: "bg-green-100 text-success",
 };
 
 export const DetailMyOrder = {
@@ -368,5 +388,3 @@ export const DetailMyOrder = {
     },
   ],
 };
-
-

@@ -4,6 +4,7 @@ import { rupiahFormat } from "@trex/utils/helpers";
 import { ListOrders, classStatus } from "@trex/stores/TempData";
 import Link from "next/link";
 
+
 export default function OrderLists() {
   return (
     <>
@@ -20,7 +21,7 @@ export default function OrderLists() {
               </div>
               {listOrder.orders.map((order, index) => (
                 <div key={index} className="border rounded-[10px] px-3 hover:bg-slate-100 h-[236px]">
-                  <Link href={`orders/${encodeURIComponent(listOrder.kodeTransaksi)}`}>
+                  <Link href={`orders/${encodeURIComponent(order.idOrder)}`}>
                     <div className="flex justify-between flex-nowrap text-xs py-3">
                       <div
                         className={`font-bold rounded-[40px] text-white px-2 py-1 ${

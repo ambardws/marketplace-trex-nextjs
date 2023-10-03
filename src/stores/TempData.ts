@@ -388,3 +388,26 @@ export const DetailMyOrder = {
     },
   ],
 };
+
+export const trackingOrders = [
+  {
+    status: "RECEIVED AT INBOUND STATION [JAKARTA, LENTENG AGUNG]",
+    date: "02-02-2023 08:10"
+  },
+  {
+    status: "SHIPMENT FORWARDED FROM TRANSIT CITY TO DESTINATION CITY [JAKARTA, LENTENG AGUNG]",
+    date: "02-02-2023 06:03"
+  },
+  {
+    status: "RECEIVED AT WAREHOUSE [JAKARTA, MEGAHUB FACILITY]",
+    date: "02-02-2023 05:39"
+  },
+  {
+    status: "PROCESSED AT SORTING CENTER [TANGERANG, OTB AKASIA]",
+    date: "02-02-2023 01:22"
+  },
+  {
+    status: "SHIPMENT RECEIVED BY JNE COUNTER OFFICER AT [TANGERANG]",
+    date: "01-02-2023 11:18"
+  },
+]

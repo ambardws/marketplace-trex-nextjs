@@ -40,7 +40,7 @@ export default function HeaderHome({
                   className="absolute -top-2 -right-2 w-[187px] h-[163px]"
                 />
               </div>
-              <div className="flex pt-10 w-full space-x-5 px-5">
+              <div className="flex pt-5 w-full space-x-5 px-5">
                 <div className="relative w-[80%]">
                   <Image
                     src={assets.TrexIcons.Search}
@@ -92,7 +92,7 @@ export default function HeaderHome({
               </div>
             </div>
 
-            <h1 className="text-sm font-bold mt-5 p-5">Kategori Produk</h1>
+            <h1 className="text-sm font-bold p-5">Kategori Produk</h1>
             <div className="flex text-sm px-5 overflow-x-scroll space-x-3">
               {categories.map((categorie) => (
                 <div
@@ -121,7 +121,7 @@ export default function HeaderHome({
         <>
           <header>
             {cart}
-            <div className={`flex justify-between pt-5 px-5 h-[100px] ${cart ? "shadow-md" : ""}`}>
+            <div className={`flex justify-between p-5 h-[60px] ${cart ? "shadow-md" : ""}`}>
               <div
                 onClick={() => back()}
                 className="space-x-2 cursor-pointer flex"
@@ -131,10 +131,10 @@ export default function HeaderHome({
                   alt="back"
                   className="inline-block"
                 />
-                <h6 className="text-base font-bold pt-7">{title}</h6>
+                <h6 className="text-base font-bold m-auto">{title}</h6>
               </div>
               {cart && (
-                <Link href={"/dashboard/checkout/cart"} className="pt-7">
+                <Link href={"/dashboard/checkout/cart"} className="my-auto">
                   <Image src={assets.TrexIcons.Cart} alt="cart" />
                 </Link>
               )}

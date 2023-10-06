@@ -3,13 +3,14 @@ import Image from "next/image";
 import { rupiahFormat } from "@trex/utils/helpers";
 import { ListOrders, classStatus } from "@trex/stores/TempData";
 import Link from "next/link";
+import EmptyOrder from "./EmptyOrder";
 
 
 export default function OrderLists() {
   return (
     <>
       <div className="flex flex-col space-y-5">
-        {ListOrders &&
+        {ListOrders ? (
           ListOrders.map((listOrder, index) => (
             <div
               key={index}
@@ -88,7 +89,9 @@ export default function OrderLists() {
                 </div>
               ))}
             </div>
-          ))}
+          ))) : (
+            <EmptyOrder />
+          )}
       </div>
     </>
   );
